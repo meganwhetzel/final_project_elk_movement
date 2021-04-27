@@ -1,0 +1,4 @@
+"0","qmplot(longitude, latitude, data = facet, color = elk_id, geom = ""path"", "
+"0","       legend = ""topright"", zoom = 10) +"
+"0","  scale_color_viridis_d(option = ""turbo"") +"
+"0","  labs(color = ""Elk ID"")"

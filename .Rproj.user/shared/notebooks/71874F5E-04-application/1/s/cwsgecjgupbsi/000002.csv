@@ -1,0 +1,45 @@
+"0","qmplot(longitude, latitude, data = solo_elk, color = elk_id, geom = ""path"", "
+"0","       legend = ""right"") +"
+"0","  labs(color = ""Elk ID"")"
+"2","Using zoom = 11...
+"
+"2","Source : http://tile.stamen.com/terrain/11/371/698.png
+"
+"2","Source : http://tile.stamen.com/terrain/11/372/698.png
+"
+"2","Source : http://tile.stamen.com/terrain/11/373/698.png
+"
+"2","Source : http://tile.stamen.com/terrain/11/374/698.png
+"
+"2","Source : http://tile.stamen.com/terrain/11/371/699.png
+"
+"2","Source : http://tile.stamen.com/terrain/11/372/699.png
+"
+"2","Source : http://tile.stamen.com/terrain/11/373/699.png
+"
+"2","Source : http://tile.stamen.com/terrain/11/374/699.png
+"
+"2","Source : http://tile.stamen.com/terrain/11/371/700.png
+"
+"2","Source : http://tile.stamen.com/terrain/11/372/700.png
+"
+"2","Source : http://tile.stamen.com/terrain/11/373/700.png
+"
+"2","Source : http://tile.stamen.com/terrain/11/374/700.png
+"
+"2","Source : http://tile.stamen.com/terrain/11/371/701.png
+"
+"2","Source : http://tile.stamen.com/terrain/11/372/701.png
+"
+"2","Source : http://tile.stamen.com/terrain/11/373/701.png
+"
+"2","Source : http://tile.stamen.com/terrain/11/374/701.png
+"
+"2","Source : http://tile.stamen.com/terrain/11/371/702.png
+"
+"2","Source : http://tile.stamen.com/terrain/11/372/702.png
+"
+"2","Source : http://tile.stamen.com/terrain/11/373/702.png
+"
+"2","Source : http://tile.stamen.com/terrain/11/374/702.png
+"

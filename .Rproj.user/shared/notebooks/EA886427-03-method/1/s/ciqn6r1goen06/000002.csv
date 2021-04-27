@@ -1,0 +1,7 @@
+"0","gps %>% "
+"0","  filter(elk_id == ""878"") %>%"
+"0","  ggplot(aes(x = longitude, y = latitude, color = elk_id)) +"
+"0","  geom_path(color = ""turquoise"") +"
+"0","  labs(x = ""Longitude"", y = ""Latitude"") +"
+"0","  theme_minimal() +"
+"0","  theme(legend.position = ""none"")"

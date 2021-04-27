@@ -1,0 +1,14 @@
+fig:figure
+introduction
+project-goals
+project-outline
+chapter2
+description-of-structure
+database-diagram
+building-the-database
+chapter3
+chapter4
+plotting-an-elks-path
+heatmap-of-elk-landscape-usage
+chapter5
+chapter6

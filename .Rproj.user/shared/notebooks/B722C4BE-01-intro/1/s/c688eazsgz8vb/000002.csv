@@ -1,0 +1,4 @@
+"0","gps$height_above_ellipsoid_m = as.numeric(gps$height_above_ellipsoid_m)"
+"0","gps$longitude = as.numeric(gps$longitude)"
+"0","gps$latitude = as.numeric(gps$latitude)"
+"0","gps$temp_c = as.numeric(gps$temp_c)"

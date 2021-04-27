@@ -1,0 +1,22 @@
+# References {#chapter6}
+
+ggmap:
+
+D. Kahle and H. Wickham. ggmap: Spatial Visualization with ggplot2. The R
+Journal, 5(1), 144-161. URL
+http://journal.r-project.org/archive/2013-1/kahle-wickham.pdf
+
+
+
+Movebank:
+
+Original article:
+Ciuti S, Muhly TB, Paton DG, McDevitt AD, Musiani M, Boyce MS (2012)
+Human selection of elk behavioural traits in a landscape of fear.
+Proceedings of the Royal Society B 279(1746): 4407-4416.
+doi:10.1098/rspb.2012.1483
+
+Movebank data package:
+
+Boyce MS, Ciuti S (2020) Data from: Human selection of elk behavioural traits 
+in a landscape of fear. Movebank Data Repository. doi:10.5441/001/1.j484vk24

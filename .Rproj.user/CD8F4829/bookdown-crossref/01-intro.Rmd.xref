@@ -1,0 +1,6 @@
+h1:chapter2 Database Structure and Creation
+h2:description-of-structure Description of structure
+h3:database-diagram 
+fig:figure Image of simple database structure (single table) of elk movement
+h2:building-the-database Building the Database
+

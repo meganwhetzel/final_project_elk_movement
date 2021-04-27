@@ -1,0 +1,133 @@
+# Elk Movement {#chapter4}
+
+I had a large number of elk to work with so I wanted to plot the coordinates of a subset of them to compare their movement in relation to each other and the study area. 
+
+Generally, elk travel many kilometers for seasonal migration and as part of their home range - seasonally they can average about 100 km! I aimed to see how elk are moving individually and whether their paths cross with other elk while moving through their home ranges.
+
+## Plotting an elk's path
+
+I isolated one elk, number 878, and plotted its telemetry points:
+```{r 878, echo=TRUE, eval=TRUE}
+gps %>% 
+  filter(elk_id == "878") %>%
+  ggplot(aes(x = longitude, y = latitude, color = elk_id)) +
+  geom_path(color = "turquoise") +
+  labs(x = "Longitude", y = "Latitude") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+Most elk appeared to have interesting patterns of movement so I plotted a few more 
+individually to see how they looked:
+
+Elk 1622:
+```{r 1622, echo=TRUE, eval=TRUE}
+gps %>% 
+    filter(elk_id == "1622") %>%
+    ggplot(aes(x = longitude, y = latitude, color = elk_id)) +
+    geom_path(color = "slateblue") +
+    labs(x = "Longitude", y = "Latitude") +
+    theme_minimal() +
+    theme(legend.position = "none")
+```
+  
+Elk 300:
+
+```{r 300, echo=TRUE, eval=TRUE}
+gps %>% 
+  filter(elk_id == "300") %>%
+  ggplot(aes(x = longitude, y = latitude, color = elk_id)) +
+  geom_path(color = "palevioletred") +
+  labs(x = "Longitude", y = "Latitude") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+  
+Then, I chose 6 more elk to compare the movements of with elk 878, 1622, and 300:
+
+```{r multi, echo=TRUE, eval=TRUE}
+gps %>% 
+  filter(elk_id %in% c("1622", "878", "300", "611", 
+                       "609380B", "32439", "179", "1996", "609377A")) %>% 
+  ggplot(aes(x = longitude, y = latitude, color = elk_id)) +
+  geom_path() +
+  labs(x = "Longitude", y = "Latitude", color = "Elk ID") +
+  facet_wrap(~ elk_id) +
+  scale_color_viridis_d(option = "rocket") + 
+  theme_minimal() +
+  theme(legend.position = "bottom") +
+  theme(axis.text.x = element_text(angle = 90))
+```
+
+Just simply looking at these paths created by the telemetry points doesn't really tell us much about the elk's decisions. What locations did they use the most?
+
+## Heatmap of elk landscape usage
+
+I created a heat map of a few elk to really see where on the landscape elk were spending the most time. 
+
+Elk 878:
+```{r hex878, echo=TRUE, eval=TRUE}
+gps %>% 
+  select(elk_id, longitude, latitude) %>% 
+  filter(elk_id == "878") %>% 
+  ggplot(aes(x = longitude, y = latitude,
+  )) +
+  geom_hex() +
+  scale_fill_viridis_c(option = "inferno") +
+  labs(x = "Longitude", y = "Latitude", 
+       title = "Heatmap of Most Used Locations for Elk 878") +
+  theme_minimal() +
+  theme(legend.position = "right")
+```
+
+Elk 1622:
+```{r hex1622, echo=TRUE, eval=TRUE}
+gps %>% 
+  select(elk_id, longitude, latitude) %>% 
+  filter(elk_id == "1622") %>% 
+  ggplot(aes(x = longitude, y = latitude,
+  )) +
+  geom_hex() +
+  scale_fill_viridis_c(option = "inferno") +
+  labs(x = "Longitude", y = "Latitude", 
+       title = "Heatmap of Most Used Locations for Elk 1622") +
+  theme_minimal() +
+  theme(legend.position = "right")
+```
+  
+And again, elk 300:
+```{r hex300, echo=TRUE, eval=TRUE}
+gps %>% 
+  select(elk_id, longitude, latitude) %>% 
+  filter(elk_id == "300") %>% 
+  ggplot(aes(x = longitude, y = latitude)) +
+  geom_hex() +
+  labs(x = "Longitude", y = "Latitude", 
+       title = "Heatmap of Most Used Locations for Elk 300") +
+  scale_fill_viridis_c(option = "inferno") +
+  theme_minimal() +
+  theme(legend.position = "right")
+
+```
+
+It seems as if elk 300 enjoyed 2 different areas within its home range and also traveled quickly between those 2 locations. 
+
+  
+Here are the heatmaps of the other 6 elk:
+```{r fullheat, echo=TRUE, eval=TRUE}
+gps %>% 
+  filter(elk_id %in% c("611", 
+                       "609380B", "32439", "179", "1996", "609377A")) %>% 
+  ggplot(aes(x = longitude, y = latitude)) +
+  geom_hex() +
+  scale_fill_viridis_c(option = "inferno") + 
+  labs(x = "Longitude", y = "Latitude") +
+  facet_wrap(~ elk_id) +
+  theme_minimal() +
+  theme(legend.position = "bottom") +
+  theme(axis.text.x = element_text(angle = 90))
+```
+
+
+
+Elk do appear to be utilizing different locations on the landscape than each other. However, this dataset would have been more useful if it also contained sex of the elk. I would have liked to compare male to female elk in terms of movement and size of home ranges because of differences in seasonal migration, caring for young, and utilizing resources. 

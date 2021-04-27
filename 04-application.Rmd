@@ -1,0 +1,59 @@
+# Elk Usage of the Landscape {#chapter5}
+
+In the previous chapter, I showed graphically how elk were moving individually and in relation to each other. The graphs I made were interesting, but they didn't really show the whole picture.
+
+I decided to do a deep dive into the world of [ggmap](https://journal.r-project.org/archive/2013-1/kahle-wickham.pdf). 
+
+Ggmap allows you to bring in a Google Map image of an area of interest and overlay data points on top of it. I thought this would be super useful in helping me visualize how these elk were moving on the landscape.
+
+I needed to get an API key to register myself to use ggmap, which was a headache all on its own! I am keeping it hidden because it is a unique identifier for me.
+```{r key, echo=FALSE, eval=FALSE}
+register_google(key = "AIzaSyBBNFfyr8MePsXSqJDyDDY3r6THen4BH6s", write = TRUE)
+```
+
+
+First, I set up a google map by using the coordinates given for the study area in Movebank:
+```{r map, echo=TRUE, eval=TRUE}
+elk_map <- get_googlemap(center = c(-114.400, 49.400))
+```
+
+Then, I successfully pulled in a map of the study area, without data points:
+
+```{r map2, echo=TRUE, eval=TRUE}
+ggmap(elk_map, extent = "normal")
+```
+  
+There is the general area of the elk study!
+
+Next, I subset some data to be able to plot points on this map:
+```{r solo, echo=TRUE, eval=TRUE}
+solo_elk <- gps %>% 
+  filter(elk_id == "878")
+```
+
+```{r facet, echo=TRUE, eval=TRUE}
+facet <- gps %>% 
+  filter(elk_id %in% c("1622", "878", "300", "611", 
+                       "609380B", "32439", "179", "1996", "609377A"))
+```
+
+And finally, I can plot elk 878 with some actual context:
+```{r map878, echo=TRUE, eval=TRUE}
+qmplot(longitude, latitude, data = solo_elk, color = elk_id, geom = "path", 
+       legend = "right") +
+  labs(color = "Elk ID")
+```
+
+Now elk 878's movements make a lot more sense. It stuck mostly to valley bottoms and spent some time in the upper right hand corner where more roads and civilization appear to be. 
+
+And finally, a plot of the 9 elk used in the previous facet wrap:
+```{r mapfacet, echo=TRUE, eval=TRUE}
+qmplot(longitude, latitude, data = facet, color = elk_id, geom = "path", 
+       legend = "topright", zoom = 10) +
+  scale_color_viridis_d(option = "turbo") +
+  labs(color = "Elk ID")
+```
+  
+It looks like the elk actually did have overlapping home ranges and many stayed in similar areas. Elk 300 was isolated from the others and even crossed over the border into Montana. 
+
+I was incredibly excited to be able to get ggmap to work properly and to produce a very cool map showing elk movement. It looks like movement varies widely individually and many elk actually have home range overlaps. This would generally be expected because they are a herd species and in the rut, males keep harems of females, so more elk would be in the same places. I would probably have a better understanding of how the elk move if all 98 were plotted on this map, but to avoid too much confusion, I'll stick with the nine currently plotted!

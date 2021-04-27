@@ -1,0 +1,1 @@
+"0","elk_db <- dbConnect(RSQLite::SQLite(), ""/Users/Megan/Desktop/Rep_Sci/Elk_Movement_Project/elk_movement.db"")"

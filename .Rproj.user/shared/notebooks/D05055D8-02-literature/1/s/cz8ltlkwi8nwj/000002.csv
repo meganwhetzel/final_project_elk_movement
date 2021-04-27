@@ -1,0 +1,8 @@
+"0","gps %>% "
+"0","  select(temp_c, elk_id) %>% "
+"0","  filter(elk_id == ""1590"") %>% "
+"0","  ggplot(aes(x = temp_c, fill = elk_id)) +"
+"0","  geom_bar(aes(y = ..prop.., group = 1)) + "
+"0","  labs(x = ""Temperature (Cº)"", y = ""Relative frequency"", fill = ""Elk ID"") +"
+"0","  theme_minimal() +"
+"0","  theme(legend.position = ""bottom"")"

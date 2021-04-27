@@ -1,0 +1,2 @@
+"0","solo_elk <- gps %>% "
+"0","  filter(elk_id == ""878"")"
