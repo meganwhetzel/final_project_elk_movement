@@ -12,7 +12,7 @@ description: "This is my final project website."
 
 # Introduction
 
-```{r elk, echo=FALSE, fig.align = 'right', out.height = '40%', out.width= '40%'}
+```{r elk, echo=FALSE, fig.align = 'right', out.height = '40%', out.width= '40%', fig.cap="https://www.etsy.com/listing/625557880/bugling-elk-decal"}
 knitr::include_graphics("elk.png")
 ```
 

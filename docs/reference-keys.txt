@@ -1,3 +1,4 @@
+fig:elk
 fig:figure
 introduction
 project-goals

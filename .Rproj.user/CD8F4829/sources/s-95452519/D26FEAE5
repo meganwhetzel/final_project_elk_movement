@@ -3,7 +3,7 @@
     "path": "~/Desktop/Final Project/Rep_Sci Final Project/index.Rmd",
     "project_path": "index.Rmd",
     "type": "r_markdown",
-    "hash": "2569698855",
+    "hash": "4075034540",
     "contents": "",
     "dirty": false,
     "created": 1619477194031.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "62,35",
-        "scrollLine": "41"
+        "cursorPosition": "15,34",
+        "scrollLine": "2"
     },
     "folds": "",
-    "lastKnownWriteTime": 1619559764,
+    "lastKnownWriteTime": 1619578434,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1619559764049,
+    "last_content_update": 1619578434736,
     "read_only": false,
     "read_only_alternatives": []
 }
