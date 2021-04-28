@@ -8,7 +8,7 @@ Ggmap allows you to bring in a Google Map image of an area of interest and overl
 
 I needed to get an API key to register myself to use ggmap, which was a headache all on its own! I am keeping it hidden because it is a unique identifier for me.
 ```{r key, echo=FALSE, eval=FALSE}
-register_google(key = "AIzaSyBBNFfyr8MePsXSqJDyDDY3r6THen4BH6s", write = TRUE)
+register_google(key = "", write = TRUE)
 ```
 
 
